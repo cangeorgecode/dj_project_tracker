@@ -29,7 +29,7 @@
     <tbody>
     {% for project in projects %}
         <tr>
-        <th scope="row" >{{ project.date_created }}</th>
+        <th scope="row" >{{ project.date_created.date }}</th>
         {% if user.is_authenticated %}
         <td><a href="{% url 'viewproject' project.id %}">{{ project.title }}</a></td>
         {% else %}

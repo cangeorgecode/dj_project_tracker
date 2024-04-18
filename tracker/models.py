@@ -9,3 +9,6 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def datecreated(self):
+        return self.date_created.strftime('%B %d %Y')
