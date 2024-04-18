@@ -1,0 +1,16 @@
+{% extends 'tracker/base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container text-center pt-4">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    
+</div>
+<div class="container text-center pt-2">
+    <a href="{% url 'index' %}" class="btn btn-secondary">Back</a>
+</div>
+{% endif %}
+{% endblock content %}
