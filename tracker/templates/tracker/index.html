@@ -1,17 +1,26 @@
 {% extends 'tracker/base.html' %}
 {% block content %}
 <div class="container text-center pt-4">
-    <h4><u>Metrics</u></h4>
-    <div class="row">
-        <div class="col">Completed: {{ completed }}</div>
-        <div class="col">Total: {{ total }}</div>
-        <div class="col">Progress: {{ progress }}%</div>
-    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Completed Projects</th>
+            <th scope="col">Total Project</th>
+            <th scope="col">Progress</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <td>{{ completed }}</td>
+            <td>{{ total }}</td>
+            <td>{{ progress }}%</td>
+          </tr>
+        </tbody>
+      </table>
 </div>
 
 <div class="container text-center pt-5">
-    <h4><u>Ongoing Projects</u></h4>
-<table class="table align-items-center">
+<table class="table ">
     <thead>
       <tr>
         <th scope="col">Date created</th>
@@ -26,7 +35,7 @@
         {% endif %}
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
     {% for project in projects %}
         <tr>
         <th scope="row" >{{ project.date_created.date }}</th>
