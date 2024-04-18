@@ -16,7 +16,10 @@
       <tr>
         <th scope="col">No.</th>
         <th scope="col">Title</th>
+        {% if user.is_authenticated %}
         <th scope="col">Remarks</th>
+        {% endif %}
+        <th scope="col">Link</th>
         <th scope="col">Completed?</th>
         {% if user.is_authenticated %}
         <th scope="col">Delete</th>
@@ -32,7 +35,14 @@
         {% else %}
         <td>{{ project.title }}</a></td>
         {% endif %}
+        {% if user.is_authenticated %}
         <td>{{ project.remarks }}</td>
+        {% endif %}
+        {% if project.link %}
+        <td><a href="{{ project.link }}">Click Me!</a></td>
+        {% else %}
+        <td></td>
+        {% endif %}
         <td>{{ project.status }}</td>
         {% if user.is_authenticated %}
         <td><a href="{% url 'delproject' project.id %}" class="btn btn-danger">Delete</a></td>

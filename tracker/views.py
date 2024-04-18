@@ -15,6 +15,7 @@ def index(request):
     completed = Project.objects.filter(status=True).count()
     total = Project.objects.count()
     progress = completed/total*100
+    progress = round(progress, 2)
     form = ProjectForm()
     context = {
         'cur_year': cur_year,
