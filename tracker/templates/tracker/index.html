@@ -14,7 +14,7 @@
 <table class="table align-items-center">
     <thead>
       <tr>
-        <th scope="col">No.</th>
+        <th scope="col">Date created</th>
         <th scope="col">Title</th>
         {% if user.is_authenticated %}
         <th scope="col">Remarks</th>
@@ -29,7 +29,7 @@
     <tbody>
     {% for project in projects %}
         <tr>
-        <th scope="row" >{{ project.id }}</th>
+        <th scope="row" >{{ project.date_created }}</th>
         {% if user.is_authenticated %}
         <td><a href="{% url 'viewproject' project.id %}">{{ project.title }}</a></td>
         {% else %}

@@ -5,6 +5,7 @@ class Project(models.Model):
     remarks = models.CharField(max_length=255, blank=True)
     status = models.BooleanField(default=False)
     link = models.CharField(max_length=1000, blank=True)
+    date_created = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
