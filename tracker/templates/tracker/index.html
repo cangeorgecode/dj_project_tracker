@@ -48,11 +48,16 @@
         <td>{{ project.remarks }}</td>
         {% endif %}
         {% if project.link %}
-        <td><a href="{{ project.link }}">Click Me!</a></td>
+        <td><a href="{{ project.link }}">Check it out!</a></td>
         {% else %}
         <td></td>
         {% endif %}
-        <td>{{ project.status }}</td>
+        {% if project.status == True %}
+          <td>Completed</td>
+        {% else %}
+          <td>In progress</td>
+        {% endif %}
+        
         {% if user.is_authenticated %}
         <td><a href="{% url 'delproject' project.id %}" class="btn btn-danger">Delete</a></td>
         {% endif %}
