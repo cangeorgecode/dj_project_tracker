@@ -19,7 +19,7 @@
       </table>
 </div>
 
-<div class="container text-center pt-5">
+<div class="container text-center pt-5 ">
 <table class="table ">
     <thead>
       <tr>
@@ -29,7 +29,7 @@
         <th scope="col">Remarks</th>
         {% endif %}
         <th scope="col">Link</th>
-        <th scope="col">Completed?</th>
+        <th scope="col">Status</th>
         {% if user.is_authenticated %}
         <th scope="col">Delete</th>
         {% endif %}
@@ -67,7 +67,7 @@
 </table>
 </div>
 {% if user.is_authenticated %}
-<div class="container text-center pt-4">
+<div class="container text-center pt-4 pb-4">
     <h4><u>Add new idea</u></h4>
     <form action="" method="POST">
         {% csrf_token %}
